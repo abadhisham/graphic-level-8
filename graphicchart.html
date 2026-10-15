@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Belajar Grafik dan Chart: Toko Nusantara Mart</title>
+<style>
+:root{--bg:#f6f8f6;--card:#fff;--ink:#1c2b22;--mute:#5b6b61;--line:#cfd8d2;--g:#1d6f42;--gl:#e3f2e9;--hl:#fff0a8;--err:#b3261e;--errl:#fdeceb}
+@media(prefers-color-scheme:dark){:root{--bg:#121a15;--card:#1a251e;--ink:#e6efe9;--mute:#9db0a4;--line:#34473b;--g:#5cc08a;--gl:#1f3a2a;--hl:#5a4d10;--err:#ff8a80;--errl:#3b1f1d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.7rem;margin:.2em 0}h2{font-size:1.25rem;margin:0 0 .5em}
+.sub{color:var(--mute);margin:0 0 20px}
+section{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px;margin:16px 0}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;min-width:100%}
+th,td{border:1px solid var(--line);padding:6px 12px;text-align:left;vertical-align:top}
+th{background:var(--gl);font-weight:600}
+.ctl{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
+label{display:block;font-size:.85rem;color:var(--mute);margin-bottom:3px}
+input,select,button{font:inherit;color:var(--ink)}
+select{width:100%;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+button{background:var(--g);color:#fff;border:0;border-radius:6px;padding:9px 16px;cursor:pointer;font-weight:600}
+@media(prefers-color-scheme:dark){button{color:#0b1a11}}
+button:focus-visible,select:focus-visible{outline:3px solid var(--g);outline-offset:2px}
+.res{margin-top:10px;padding:10px 12px;border-radius:6px;background:var(--gl)}
+.res.bad{background:var(--errl);color:var(--err)}
+.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--ink);border:1px solid var(--line);margin:8px 0}
+.opt:hover{border-color:var(--g)}
+.opt.ok{background:var(--gl);border-color:var(--g)}.opt.no{background:var(--errl);border-color:var(--err)}
+.fb{margin-top:12px;padding:10px 12px;border-radius:6px}
+.fb.ok{background:var(--gl)}.fb.no{background:var(--errl)}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin-bottom:14px}
+.bar i{display:block;height:100%;background:var(--g);transition:width .3s}
+.tp{border-left:4px solid var(--g);padding-left:12px;color:var(--mute)}
+.note{color:var(--mute);font-size:.9rem}
+.cw{border:1px solid var(--line);border-radius:6px;padding:8px;margin:8px 0;overflow-x:auto}
+.cw svg{display:block;width:100%;max-width:560px;height:auto;margin:0 auto;color:var(--ink)}
+.cap{text-align:center;font-weight:600;margin:4px 0}
+</style>
+</head>
+<body>
+<main>
+<h1>Belajar Grafik dan Chart</h1>
+<p class="sub">Angka di tabel sulit dibaca sekilas. Grafik membantu, tetapi hanya jika jenisnya tepat dan kita tahu cara membacanya. Datanya dari Toko Nusantara Mart.</p>
+<p class="tp"><b>Tujuan pembelajaran:</b> peserta didik dapat memilih jenis grafik yang sesuai dengan data dan tujuan, serta membaca dan menafsirkan grafik.</p>
+
+<section>
+<h2>1. Kenali jenis grafik</h2>
+<p>Mulai dari pertanyaan: <b>apa yang ingin ditunjukkan?</b> Tujuan menentukan jenis grafik.</p>
+<div class="tw"><table>
+<tr><th>Grafik</th><th>Dipakai untuk</th><th>Hindari bila</th></tr>
+<tr><td><b>Kolom</b></td><td>Membandingkan nilai antar kategori (penjualan tiap kategori).</td><td>Data berupa waktu yang panjang atau berkesinambungan.</td></tr>
+<tr><td><b>Batang</b> (horizontal)</td><td>Membandingkan kategori yang namanya panjang atau jumlahnya banyak.</td><td>Menunjukkan tren waktu.</td></tr>
+<tr><td><b>Garis</b></td><td>Menunjukkan perubahan atau tren dari waktu ke waktu (harian, bulanan).</td><td>Kategori tidak berurutan, misalnya nama produk.</td></tr>
+<tr><td><b>Lingkaran</b> (pie)</td><td>Menunjukkan bagian dari keseluruhan yang totalnya 100%, dengan sedikit irisan (sekitar 5 atau kurang).</td><td>Irisan banyak, atau nilainya tidak membentuk satu keseluruhan.</td></tr>
+</table></div>
+<p><b>Cara membaca grafik:</b> (1) baca judul dan satuan, (2) lihat apa yang ada di sumbu X dan sumbu Y, (3) cek apakah sumbu Y mulai dari nol, (4) cari nilai tertinggi, terendah, dan pola, (5) tarik kesimpulan yang didukung data.</p>
+<p class="note">Di Excel: blok data, buka tab Insert, lalu pilih jenis grafik. Fitur Recommended Charts hanya memberi saran, keputusan tetap di tanganmu.</p>
+</section>
+
+<section>
+<h2>2. Coba sendiri</h2>
+<p>Ada 8 kasus dengan tujuan yang berbeda. Pilih satu kasus, lalu coba semua jenis grafik. Perhatikan penilaian dan alasannya, dan perhatikan bahwa jenis terbaik berubah mengikuti tujuan.</p>
+<div class="ctl">
+<div><label for="ds">Kasus (data dan tujuan)</label><select id="ds"></select></div>
+<div><label for="ty">Jenis grafik</label><select id="ty"><option value="column">Kolom</option><option value="bar">Batang (horizontal)</option><option value="line">Garis</option><option value="pie">Lingkaran (pie)</option></select></div>
+</div>
+<div class="cap" id="ct"></div>
+<div class="cw" id="cv"></div>
+<div class="res" id="hasil" aria-live="polite"></div>
+</section>
+
+<section>
+<h2>3. Latihan</h2>
+<div class="bar"><i id="bar" style="width:0"></i></div>
+<div id="quiz"></div>
+</section>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const C=["#1d6f42","#e08a1e","#2b7fd1","#8b5cc7","#d6455d","#14a3a3","#9a7b00","#6b7280"];
+function chart(type,L,V,o={}){
+  const W=560,H=300;
+  if(type==="pie"){
+    const dy=Math.min(30,260/V.length),tot=V.reduce((a,b)=>a+b,0),cx=140,cy=150,r=110;let a=-Math.PI/2,s="";
+    V.forEach((v,i)=>{const b=a+v/tot*2*Math.PI,x0=cx+r*Math.cos(a),y0=cy+r*Math.sin(a),x1=cx+r*Math.cos(b),y1=cy+r*Math.sin(b);
+      s+=`<path d="M${cx} ${cy}L${x0} ${y0}A${r} ${r} 0 ${b-a>Math.PI?1:0} 1 ${x1} ${y1}Z" fill="${C[i%8]}" stroke="var(--card)" stroke-width="2"/>`;
+      s+=`<rect x="290" y="${20+i*dy}" width="16" height="16" fill="${C[i%8]}"/><text x="314" y="${33+i*dy}" font-size="${dy<24?12:14}" fill="currentColor">${L[i]} ${Math.round(v/tot*100)}%</text>`;a=b});
+    return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${o.alt||"Diagram lingkaran"}">${s}</svg>`;
+  }
+  const hz=type==="bar",min=o.ymin||0,m=Math.max(...V),st0=[.5,1,2,2.5,5,10,20,25,50,100,200,250,500].find(c=>Math.ceil(m*1.05/c)<=6),top=o.ymax||Math.ceil(m*1.05/st0)*st0;
+  const step=o.step||st0,ml=hz?120:48,mr=16,mt=20,pw=W-ml-mr,n=V.length,rot=!hz&&Math.max(...L.map(l=>String(l).length))*6.5>pw/n,mb=hz?28:rot?64:40,ph=H-mt-mb;
+  const lab=(x,t)=>rot?`<text transform="translate(${x} ${H-mb+16}) rotate(-35)" font-size="11" text-anchor="end" fill="currentColor">${t}</text>`:`<text x="${x}" y="${H-14}" font-size="12" text-anchor="middle" fill="currentColor">${t}</text>`;
+  const sc=v=>(v-min)/(top-min);let s="";
+  for(let t=min;t<=top+1e-9;t+=step){
+    if(hz){const x=ml+pw*sc(t);s+=`<line x1="${x}" x2="${x}" y1="${mt}" y2="${mt+ph}" stroke="var(--line)"/><text x="${x}" y="${H-8}" font-size="12" text-anchor="middle" fill="currentColor">${t}</text>`}
+    else{const y=mt+ph*(1-sc(t));s+=`<line x1="${ml}" x2="${W-mr}" y1="${y}" y2="${y}" stroke="var(--line)"/><text x="${ml-6}" y="${y+4}" font-size="12" text-anchor="end" fill="currentColor">${t}</text>`}
+  }
+  const slot=(hz?ph:pw)/n;
+  if(type==="line"){
+    const P=V.map((v,i)=>[ml+slot*(i+.5),mt+ph*(1-sc(v))]);
+    s+=`<polyline points="${P.map(p=>p.join(",")).join(" ")}" fill="none" stroke="${C[0]}" stroke-width="3"/>`;
+    P.forEach((p,i)=>{s+=`<circle cx="${p[0]}" cy="${p[1]}" r="4.5" fill="${C[0]}"/><text x="${p[0]}" y="${p[1]-10}" font-size="12" text-anchor="middle" fill="currentColor">${V[i]}</text>${lab(p[0],L[i])}`});
+  }else V.forEach((v,i)=>{
+    const bw=slot*.6;
+    if(hz){const y=mt+slot*i+(slot-bw)/2,w=pw*sc(v);s+=`<rect x="${ml}" y="${y}" width="${w}" height="${bw}" fill="${C[0]}"/><text x="${ml-6}" y="${y+bw/2+4}" font-size="12" text-anchor="end" fill="currentColor">${L[i]}</text><text x="${ml+w+4}" y="${y+bw/2+4}" font-size="12" fill="currentColor">${V[i]}</text>`}
+    else{const x=ml+slot*i+(slot-bw)/2,h=ph*sc(v);s+=`<rect x="${x}" y="${mt+ph-h}" width="${bw}" height="${h}" fill="${C[0]}"/><text x="${x+bw/2}" y="${mt+ph-h-5}" font-size="12" text-anchor="middle" fill="currentColor">${V[i]}</text>${lab(x+bw/2,L[i])}`}
+  });
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${o.alt||"Grafik"}">${s}</svg>`;
+}
+const DAYS=["Sen","Sel","Rab","Kam","Jum","Sab","Min"],DV=[4,5,4.5,6,7,9,8];
+const DS=[
+{n:"Penjualan per kategori: bandingkan kategori mana yang terbesar",t:"Penjualan per Kategori, Oktober (Rp juta)",L:["Sembako","Minuman","Kebersihan","Snack"],V:[48,22,12,18],
+ r:{column:["ok","Tepat. Tinggi kolom mudah dibandingkan antar kategori."],bar:["ok","Tepat. Batang horizontal juga mudah dibandingkan, apalagi bila nama kategori panjang."],line:["no","Kurang tepat. Garis menyiratkan urutan atau tren, padahal kategori tidak berurutan."],pie:["mid","Bisa, karena kategori ini membentuk satu total. Namun selisih antar irisan lebih sulit dibandingkan daripada tinggi kolom."]}},
+{n:"Penjualan harian: lihat perubahan dari hari ke hari",t:"Penjualan Harian Minggu Ini (Rp juta)",L:DAYS,V:DV,
+ r:{line:["ok","Tepat. Garis menunjukkan naik turunnya penjualan dan tren dari waktu ke waktu."],column:["mid","Bisa, terutama untuk 7 hari. Tetapi untuk data waktu yang panjang, garis lebih jelas menunjukkan tren."],bar:["no","Kurang tepat. Batang horizontal membuat urutan waktu sulit diikuti."],pie:["no","Kurang tepat. Penjualan harian bukan bagian dari satu keseluruhan yang dibagi, dan tren tidak terlihat."]}},
+{n:"Metode pembayaran: lihat porsi tiap metode dari keseluruhan",t:"Porsi Metode Pembayaran Pelanggan (%)",L:["Tunai","QRIS","Transfer","Debit"],V:[45,35,12,8],
+ r:{pie:["ok","Tepat. Totalnya 100% dan hanya 4 irisan, jadi porsi tiap bagian mudah dilihat."],column:["mid","Bisa. Perbandingan antar metode jelas, tetapi kesan \"bagian dari keseluruhan\" kurang terlihat."],bar:["mid","Bisa. Perbandingan jelas, tetapi kesan \"bagian dari keseluruhan\" kurang terlihat."],line:["no","Kurang tepat. Metode pembayaran bukan data berurutan, jadi garis penghubungnya tidak bermakna."]}},
+{n:"Produk terlaris: urutkan 8 produk bernama panjang",t:"Penjualan 8 Produk Terlaris (unit)",L:["Kopi Sachet","Mi Instan Goreng","Beras 5kg","Minyak Goreng 2L","Gula Pasir 1kg","Telur Ayam 1kg","Susu UHT 1L","Deterjen 800g"],V:[150,132,120,95,88,76,64,40],
+ r:{bar:["ok","Tepat. Nama panjang terbaca nyaman di sisi kiri, dan batang yang terurut memudahkan membaca peringkat."],column:["mid","Bisa, tetapi 8 nama panjang membuat label miring dan lebih sulit dibaca."],line:["no","Kurang tepat. Garis menyiratkan urutan antar produk, padahal produk tidak berurutan."],pie:["no","Kurang tepat. 8 irisan terlalu banyak dan kecil, sehingga selisih antar produk sulit dibandingkan."]}},
+{n:"Omzet bulanan: lihat tren selama setahun",t:"Omzet Bulanan 2026 (Rp juta)",L:["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agu","Sep","Okt","Nov","Des"],V:[30,28,32,35,38,36,40,42,45,50,58,70],
+ r:{line:["ok","Tepat. Garis memperlihatkan tren naik sepanjang tahun dan lonjakan di akhir tahun dengan jelas."],column:["mid","Bisa. Naik turunnya terlihat, tetapi untuk data waktu yang panjang garis lebih jelas menunjukkan arah tren."],bar:["no","Kurang tepat. Batang horizontal membuat urutan bulan sulit diikuti sebagai tren."],pie:["no","Kurang tepat. 12 irisan terlalu banyak, dan tren dari bulan ke bulan tidak terlihat."]}},
+{n:"Biaya operasional: lihat porsi tiap biaya dari total",t:"Komposisi Biaya Operasional Bulan Ini (%)",L:["Gaji","Sewa","Listrik & air","Pengemasan","Lain-lain"],V:[40,25,15,12,8],
+ r:{pie:["ok","Tepat. Semua biaya membentuk satu total 100%, dengan 5 irisan yang masih mudah dibedakan."],column:["mid","Bisa. Perbandingan antar biaya jelas, tetapi kesan \"bagian dari total\" kurang terlihat."],bar:["mid","Bisa. Perbandingan antar biaya jelas, tetapi kesan \"bagian dari total\" kurang terlihat."],line:["no","Kurang tepat. Jenis biaya tidak berurutan, jadi garis penghubungnya tidak bermakna."]}},
+{n:"Stok barang: bandingkan sisa stok 5 barang",t:"Sisa Stok Saat Ini (unit)",L:["Beras","Minyak","Gula","Telur","Kopi"],V:[40,25,60,30,200],
+ r:{column:["ok","Tepat. Tinggi kolom langsung menunjukkan barang mana yang stoknya banyak atau menipis."],bar:["ok","Tepat. Batang horizontal juga mudah dibandingkan antar barang."],line:["no","Kurang tepat. Barang tidak berurutan, jadi garis menyiratkan hubungan yang tidak ada."],pie:["no","Kurang tepat. Stok berbagai barang bukan bagian dari satu keseluruhan yang bermakna."]}},
+{n:"Pelanggan per jam: cari jam ramai dan jam sepi",t:"Jumlah Pelanggan per Jam Buka",L:["08.00","10.00","12.00","14.00","16.00","18.00","20.00"],V:[12,18,35,22,28,45,20],
+ r:{line:["ok","Tepat. Garis menunjukkan pola ramai dan sepi sepanjang hari, dengan puncak pada pukul 18.00."],column:["mid","Bisa. Kolom memudahkan membandingkan tiap jam, tetapi pola perubahannya kurang mengalir dibanding garis."],bar:["no","Kurang tepat. Urutan jam menjadi sulit diikuti pada batang horizontal."],pie:["no","Kurang tepat. Jumlah pelanggan per jam bukan bagian dari satu keseluruhan, dan pola waktu hilang."]}}
+];
+$("ds").innerHTML=DS.map((d,i)=>`<option value="${i}">${d.n}</option>`).join("");
+function draw(){
+  const d=DS[+$("ds").value],t=$("ty").value,[k,msg]=d.r[t];
+  $("ct").textContent=d.t;$("cv").innerHTML=chart(t,d.L,d.V,{alt:d.t});
+  const h=$("hasil");h.className="res"+(k==="no"?" bad":"");
+  h.textContent=(k==="ok"?"Pilihan tepat. ":k==="mid"?"Pilihan bisa dipakai. ":"Pilihan kurang tepat. ")+msg;
+}
+["ds","ty"].forEach(i=>$(i).addEventListener("input",draw));draw();
+
+const Q=[
+{q:"Kasir ingin menunjukkan perubahan omzet toko setiap bulan selama satu tahun. Grafik yang paling tepat?",o:["Diagram lingkaran","Grafik garis","Grafik kolom dengan 12 warna berbeda","Cukup tabel saja"],a:1,e:"Data berurutan waktu paling jelas ditampilkan dengan grafik garis karena tren naik atau turun langsung terlihat."},
+{q:"Mengapa diagram lingkaran kurang cocok untuk 10 kategori produk?",o:["Excel tidak bisa membuatnya","Irisannya terlalu banyak dan kecil sehingga sulit dibandingkan","Diagram lingkaran hanya untuk angka negatif","Warnanya tidak cukup"],a:1,e:"Pie cocok untuk sedikit irisan. Untuk banyak kategori, grafik batang atau kolom lebih mudah dibaca."},
+{c:()=>cap("Penjualan Harian Minggu Ini (Rp juta)")+chart("line",DAYS,DV,{alt:"Grafik garis penjualan harian"}),q:"Pada grafik di atas, hari apa penjualan tertinggi?",o:["Jumat","Sabtu","Minggu","Kamis"],a:1,e:"Titik tertinggi ada di hari Sabtu dengan nilai 9 juta. Setelah itu penjualan turun sedikit pada hari Minggu."},
+{c:()=>cap("Porsi Metode Pembayaran (%)")+chart("pie",["Tunai","QRIS","Transfer","Debit"],[45,35,12,8],{alt:"Diagram lingkaran metode pembayaran"}),q:"Jika toko mencatat 200 transaksi, berapa transaksi yang memakai QRIS?",o:["35","70","90","45"],a:1,e:"QRIS 35% dari 200 transaksi: 0,35 x 200 = 70 transaksi."},
+{c:()=>cap("Kepuasan Pelanggan (%)")+chart("column",["Toko A","Toko B"],[92,96],{ymin:90,ymax:100,step:2,alt:"Grafik kolom kepuasan pelanggan, sumbu dimulai dari 90"}),q:"Sekilas Toko B tampak hampir tiga kali lebih tinggi dari Toko A. Apa yang membuat grafik ini menyesatkan?",o:["Sumbu vertikal tidak dimulai dari nol","Warna kolom sama","Jumlah tokonya hanya dua","Judulnya terlalu pendek"],a:0,e:"Sumbu dimulai dari 90, bukan 0, sehingga selisih kecil terlihat besar. Selisih sebenarnya hanya 4 poin persen (96 dan 92). Selalu cek angka awal sumbu."},
+{c:()=>cap("Penjualan per Kategori, Oktober (Rp juta)")+chart("bar",["Sembako","Minuman","Kebersihan","Snack"],[48,22,12,18],{alt:"Grafik batang penjualan per kategori"}),q:"Berapa selisih penjualan Sembako dan Minuman?",o:["16 juta","26 juta","30 juta","48 juta"],a:1,e:"Sembako 48 juta dikurangi Minuman 22 juta sama dengan 26 juta."}
+];
+function cap(t){return `<div class="cap">${t}</div>`}
+let i=0,s=0;
+function show(){
+  const z=$("quiz");$("bar").style.width=(i/Q.length*100)+"%";
+  if(i>=Q.length){
+    z.innerHTML=`<h3>Skor: ${s} dari ${Q.length}</h3><p>${s===Q.length?"Sempurna. Kamu sudah bisa memilih dan membaca grafik dengan tepat.":s>=4?"Bagus. Ulangi bagian yang masih keliru, lalu coba lagi.":"Buka bagian 2, coba semua jenis grafik pada tiap data, lalu ulangi latihan."}</p><button id="re">Ulangi latihan</button>`;
+    $("re").onclick=()=>{i=0;s=0;show()};return;
+  }
+  const q=Q[i];
+  let h=`<p><b>Soal ${i+1} dari ${Q.length}.</b> ${q.q}</p>`;
+  if(q.c)h=`<div class="cw">${q.c()}</div>`+h;
+  h+=q.o.map((x,k)=>`<button class="opt" data-k="${k}">${x}</button>`).join("")+`<div id="fb"></div>`;
+  z.innerHTML=h;
+  z.querySelectorAll(".opt").forEach(b=>b.onclick=()=>done(+b.dataset.k===q.a,b));
+}
+function done(ok,btn){
+  const q=Q[i];if(ok)s++;
+  document.querySelectorAll("#quiz .opt").forEach((b,k)=>{b.disabled=true;if(k===q.a)b.classList.add("ok");else if(b===btn)b.classList.add("no")});
+  $("fb").innerHTML=`<div class="fb ${ok?"ok":"no"}"><b>${ok?"Benar.":"Belum tepat."}</b> ${q.e}</div><p><button id="nx">${i===Q.length-1?"Lihat skor":"Soal berikutnya"}</button></p>`;
+  $("nx").focus();$("nx").onclick=()=>{i++;show()};
+}
+show();
+</script>
+</body>
+</html>
